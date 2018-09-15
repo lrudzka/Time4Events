@@ -1,0 +1,124 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: black;
+    color: white;
+    font-size: 35px;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+.main_width {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3px;
+}
+div.background {
+    background-image: url("../img/concert.jpg");
+    background-size: cover;
+    min-height: 80vh;
+    padding-top: 30px;
+    color: white;
+}
+div.background h1 {
+    color: white;
+}
+h1.welcomeText {
+    font-family: 'Eagle Lake', cursive;
+    font-size: 1.3em;
+}
+div.background a {
+    color: white;
+}
+div.background a:clicked {
+    color: white;
+}
+h4.menu a {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+div.title h3 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+h4.info {
+    font-family: 'Kalam', cursive;
+}
+span.error {
+    background-color: red;
+    color: white;
+    padding: 8px;
+}
+label {
+    color: white;
+}
+p.name {
+    font-weight: 700;
+    font-size: 20px;
+}
+div.events {
+    background-color: black;
+}
+p.singleImage {
+    width: 100%;
+}
+p {
+    text-align: justify;
+}
+p.singleImage img {
+    max-width: 100%;
+    border: 2px solid white;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(51,46,51,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(51,46,51,1);
+    box-shadow: 10px 10px 5px 0px rgba(51,46,51,1);
+}
+div.event {
+    background-color: black;
+    padding: 10px;
+}
+div.event p {
+    font-size: 20px;
+}
+div.item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-bottom: 1px solid white;
+}
+p.img {
+    width: 100%;
+    height: 270px;
+}
+p.img img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid white;
+    -webkit-box-shadow: 3px 6px 45px 0px rgba(112,104,112,1);
+    -moz-box-shadow: 3px 6px 45px 0px rgba(112,104,112,1);
+    box-shadow: 3px 6px 45px 0px rgba(112,104,112,1);
+}
+div.search {
+    border: 1px solid white;
+    border-radius: 2%;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+div.searchInfo {
+    padding: 10px;
+}
+section.searchInfo {
+    margin-left: 10px;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    height: 10vh;
+    padding-top: 5px;
+}

@@ -1,0 +1,49 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+header, footer {
+    background-color: #333;
+    color: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+aside {
+    background-color: #f7f7f7;
+    padding-top: 40px;
+    text-align: center;
+}
+section {
+    padding: 20px;
+}
+article {
+    padding: 40px;
+}
+article img {
+    width: 100%;
+    text-align: center;
+    box-shadow: 6px 6px 8px #777;
+    margin-bottom: 20px;
+}
+article p {
+    font-size: 16px;
+}
+.info-icons {
+    background-color: #333;
+    color: #ddd;
+}
+aside.info-icons a {
+    color: #ddd;
+}
+aside.info-icons a:hover {
+    color: #2f4eff;
+}
+.info-icons-top div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.info-icons-top a {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: inline-block;
+}
