@@ -13,11 +13,14 @@ The application is to be used to manage events.
 * a logged user can update or delete his own events - as long as they are still actual
 * everyone can view the list of events - the actual events list or the archive events list
 * both lists of events can be filtered - by keyword, by province, by city, by category and by dates
-* everyone can add new user account to the database to be able to log in to the application and to use of all the functionality
+* everyone can add new user account to the database to be able to log in to the application and to use all of the functionality
 
 ## Technologies
 
-The application was created using HTML5, PHP, mySQL database, CSS, Bootstrap framework
+The application was created using HTML5, PHP, mySQL database, CSS, Bootstrap framework.
+
+Connections to the mySQL database are established by creating instances of the PDO base class.
+Users' passwords are hashed, and the database is protected against sql injection.
 
 ## RWD
 
