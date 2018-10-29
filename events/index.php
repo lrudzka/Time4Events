@@ -11,7 +11,7 @@
 
 	<title>About Events</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Eagle+Lake" rel="stylesheet">
 </head>
 
@@ -20,17 +20,17 @@
 	
     <div class="background">
         <section class="main_width">
-            <h1 class="welcomeText">Nie czekaj na przygodę, po prostu weź w niej udział</h1>
-            <h2><a href="events.php">Znajdź wydarzenie</a></h2>
+            <h1 clasconnects="welcomeText">Nie czekaj na przygodę, po prostu weź w niej udział</h1>
+            <h2><a href="modules/mainModules/events.php">Znajdź wydarzenie</a></h2>
             <?php
                 if (isset($_SESSION['userLoggedIn']))
                 {
-                   echo '<h2><a href="welcome.php">Panel użytkownika</a></h2>';
-                   echo '<h2><a href="logout.php">Wyloguj się</a></h2>' ;
+                   echo '<h2><a href="modules/userModules/welcome.php">Panel użytkownika</a></h2>';
+                   echo '<h2><a href="modules/userModules/logout.php">Wyloguj się</a></h2>' ;
                 }
                 else
                 {
-                    echo '<h2><a href="login.php">Zaloguj się, by dodawać i zmieniać swoje wydarzenia</a></h2>';
+                    echo '<h2><a href="modules/userModules/login.php">Zaloguj się, by dodawać i zmieniać swoje wydarzenia</a></h2>';
                 }
             ?>
             <br/>

@@ -2,24 +2,24 @@
     session_start();
 
    
-    require_once 'database.php';
+     require_once '../configModules/database.php';
 
     $now = new DateTime();
     $now = $now->format('Y-m-d');
 
     //pobieramy eventy z bazy danych
-    $eventsQuery = $db->query('SELECT * FROM events WHERE endDate >= "'.$now.'" AND createdBy like "'.$_SESSION['userLoggedIn'].'" ORDER BY startDate, startTime');
+    $eventsQuery = $db->query('SELECT * FROM events_events WHERE endDate >= "'.$now.'" AND createdBy like "'.$_SESSION['userLoggedIn'].'" ORDER BY startDate, startTime');
     //odbieramy dane -> do tablicy dwuwymiarowej
     $events = $eventsQuery->fetchAll();
 
     //pobieramy województwa z bazy danych
-    $provincesQuery = $db->query('SELECT * FROM province');
+    $provincesQuery = $db->query('SELECT * FROM events_province');
     //odbieramy dane -> w tym wypadku do tablicy dwuwymiarowej
     $provinces = $provincesQuery->fetchAll();
     //tabelę użyjemy poniżej, w tagu select w formularzu wyszukiwania
 
     //i to samo robimy z kategoriamy zdarzeń
-    $categoriesQuery = $db->query('SELECT * FROM eventCategory ORDER BY id');
+    $categoriesQuery = $db->query('SELECT * FROM events_eventCategory ORDER BY id');
     $categories = $categoriesQuery->fetchAll();
 
     function validateDate($date, $format = 'Y-m-d')
@@ -41,7 +41,7 @@
         }
         else
         {
-            $province = '%'.$_POST['province'].'%';
+            $province = $_POST['province'];
         }
 
         if ($_POST['category']=='')
@@ -50,7 +50,7 @@
         }
         else
         {
-            $category = '%'.$_POST['category'].'%';
+            $category = $_POST['category'];
         }
 
         if ($_POST['city']=='')
@@ -104,7 +104,7 @@
         if ($allOk)
         {
             //pobieramy eventy z bazy danych z ograniczeniami
-            $eventsQuery = $db->query('SELECT * FROM events WHERE endDate >= "'.$now.'" AND province like "'.$province.'" AND category like "'.$category.'" AND city like "'.$city.'" AND (name like "'.$keyWord.'" OR description like "'.$keyWord.'" OR city like "'.$keyWord.'") AND startDate > "'.$startingFrom.'" AND endDate < "'.$endingTo.'" AND createdBy like "'.$_SESSION['userLoggedIn'].'" ORDER BY startDate, startTime');
+            $eventsQuery = $db->query('SELECT * FROM events_events WHERE endDate >= "'.$now.'" AND province like "'.$province.'" AND category like "'.$category.'" AND city like "'.$city.'" AND (name like "'.$keyWord.'" OR description like "'.$keyWord.'" OR city like "'.$keyWord.'") AND startDate > "'.$startingFrom.'" AND endDate < "'.$endingTo.'" AND createdBy like "'.$_SESSION['userLoggedIn'].'" ORDER BY startDate, startTime');
             //odbieramy dane -> do tablicy dwuwymiarowej
             $events = $eventsQuery->fetchAll();
         }
@@ -129,17 +129,17 @@
 
     <title>About Events</title>
     
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
-<?php include "templates/header.php"; ?>
+<?php include "../../templates/header.php"; ?>
     <div class="background">
         <section class="main_width">
-        <h4 class="menu"><a href="welcome.php">Panel użytkownika</a>   <a href="userArchiveEvents.php">Twoje wydarzenia archiwalne</a> <a href="index.php">Strona główna</a></h4>
+        <h4 class="menu"><a href="welcome.php">Panel użytkownika</a>   <a href="userArchiveEvents.php">Twoje wydarzenia archiwalne</a> <a href="../../index.php">Strona główna</a></h4>
             <div class="row title">
                 <h3>TWOJE WYDARZENIA NADCHODZĄCE</h3>
             </div>
@@ -306,7 +306,7 @@
                                 <p class=".'"img"'."><img src=".'"'."{$event['picture']}".'"'." alt=".'"image illustrating event"'."></p>
                                 <p class=".'"btn btn-danger"'."><a href=".'"'."deleteEvent.php?id={$event['id']}".'"'." target=".'"_blank"'.">Usuń</a></p>
                                 <p class=".'"btn btn-warning"'."><a href=".'"'."updateEvent.php?id={$event['id']}".'"'." target=".'"_blank"'.">Edytuj</a></p>
-                                <p class=".'"btn btn-primary"'."><a href=".'"'."singleEvent.php?id={$event['id']}".'"'." target=".'"_blank"'.">Przeglądaj</a></p>
+                                <p class=".'"btn btn-primary"'."><a href=".'"'."../mainModules/singleEvent.php?id={$event['id']}".'"'." target=".'"_blank"'.">Przeglądaj</a></p>
                                 </div>";
                         }
                 ?>
@@ -318,7 +318,7 @@
     </div>
 
     
-    <?php include "templates/footer.php"; ?>
+    <?php include "../../templates/footer.php"; ?>
 </body>
 </html>
 

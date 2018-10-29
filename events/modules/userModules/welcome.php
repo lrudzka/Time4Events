@@ -16,13 +16,13 @@
 
     <title>About Events</title>
     
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
 </head>
 
 <body>
-<?php include "templates/header.php"; ?>
+<?php include "../../templates/header.php"; ?>
     <div class="background">
         <section class="main_width">
             <?php
@@ -43,6 +43,6 @@
     </div>
 
     
-    <?php include "templates/footer.php"; ?>
+    <?php include "../../templates/footer.php"; ?>
 </body>
 </html>

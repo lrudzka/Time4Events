@@ -70,9 +70,9 @@
 
         if ($everythingOk == true)
         {
-            require_once 'database.php';
+             require_once '../configModules/database.php';
             //sprawdzamy czy login jest już w bazie
-            $queryCheck = $db->prepare('SELECT * FROM users WHERE login=:login');
+            $queryCheck = $db->prepare('SELECT * FROM events_users WHERE login=:login');
             $queryCheck->bindValue(':login', $login, PDO::PARAM_STR);
             $queryCheck->execute();
             $loginAlreadyExists = $queryCheck->fetch();
@@ -84,7 +84,7 @@
             }
 
             //sprawdzamy, czy email jest już w bazie
-            $queryCheck = $db->prepare('SELECT * FROM users WHERE email=:email');
+            $queryCheck = $db->prepare('SELECT * FROM events_users WHERE email=:email');
             $queryCheck->bindValue(':email', $email, PDO::PARAM_STR);
             $queryCheck->execute();
             $emailAlreadyExists = $queryCheck->fetch();
@@ -102,7 +102,7 @@
             //insert z użyciem PDO
                 //wykorzystujemy stworzony przez nas obiekt - db (w pliku database.php)
                 //krok pierwszy - definiujemy zapytanie
-                $query = $db->prepare('INSERT INTO users VALUES (:login, :password, :email)');
+                $query = $db->prepare('INSERT INTO events_users VALUES (:login, :password, :email)');
                 //krok drugi - przypisujemy wartość do zmiennych
                 $query->bindValue(':login', $login, PDO::PARAM_STR);
                 $query->bindValue(':password', $pwd_hash, PDO::PARAM_STR);
@@ -129,13 +129,13 @@
 
     <title>About Events</title>
     
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
-<?php include "templates/header.php"; ?>
+<?php include "../../templates/header.php"; ?>
     <div class="background">
         <section class="main_width">
             <h1>Utwórz nowe konto</h1>
@@ -236,13 +236,13 @@
                     </div>
                 </div>
             </form>
-            <h3><a href="index.php">Strona główna</a></h3>
+            <h3><a href="../../index.php">Strona główna</a></h3>
             <br/>
         </section>
     </div>
 
     
-    <?php include "templates/footer.php"; ?>
+    <?php include "../../templates/footer.php"; ?>
 </body>
 </html>
 

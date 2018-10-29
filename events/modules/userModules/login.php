@@ -6,7 +6,7 @@
         header("Location: welcome.php");
     }
 
-    require_once 'database.php';
+     require_once '../configModules/database.php';
 
    
     if (isset($_POST['login']))
@@ -14,7 +14,7 @@
         $login = filter_input(INPUT_POST, 'login');
         $password = filter_input(INPUT_POST, 'password');
 
-        $userQuery = $db->prepare('SELECT login, password FROM users WHERE login=:login');
+        $userQuery = $db->prepare('SELECT login, password FROM events_users WHERE login=:login');
         $userQuery -> bindValue(':login', $login, PDO::PARAM_STR);
         $userQuery-> execute();
 
@@ -46,12 +46,12 @@
 
     <title>About Events</title>
     
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
 </head>
 
 <body>
-<?php include "templates/header.php"; ?>
+<?php include "../../templates/header.php"; ?>
     <div class="background">
         <section class="main_width">
             <h1><a href="register.php">Zarejestruj się</a></h1>
@@ -94,12 +94,12 @@
                 </div>
             </form>
             <br/>
-            <h1><a href="index.php">Strona główna</a></h1>
+            <h1><a href="../../index.php">Strona główna</a></h1>
             <br/>
         </section>
     </div>
 
     
-    <?php include "templates/footer.php"; ?>
+    <?php include "../../templates/footer.php"; ?>
 </body>
 </html>

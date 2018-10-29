@@ -8,10 +8,10 @@ if (!isset($_SESSION['userLoggedIn']))
 }
 
    
-require_once 'database.php';
+ require_once '../configModules/database.php';
 
 //usuwamy event z bazy danych
-$event = $db->prepare('DELETE FROM events WHERE id='.$_GET['id']);
+$event = $db->prepare('DELETE FROM events_events WHERE id='.$_GET['id']);
 $event->execute();
 
 

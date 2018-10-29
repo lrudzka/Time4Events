@@ -6,10 +6,10 @@
         header ('Location: login.php');
     }
 
-    require_once 'database.php';
+     require_once '../configModules/database.php';
 
     //pobieramy wybrany event z bazy danych
-    $eventQuery = $db->query('SELECT * FROM events WHERE id='.$_GET['id']);
+    $eventQuery = $db->query('SELECT * FROM events_events WHERE id='.$_GET['id']);
     //odbieramy dane -> do tablicy dwuwymiarowej
     $event = $eventQuery->fetch(PDO::FETCH_ASSOC);
 
@@ -18,13 +18,13 @@
 
    
     //pobieramy województwa z bazy danych
-    $provincesQuery = $db->query('SELECT * FROM province');
+    $provincesQuery = $db->query('SELECT * FROM events_province');
     //odbieramy dane -> w tym wypadku do tablicy dwuwymiarowej
     $provinces = $provincesQuery->fetchAll();
     //tabelę użyjemy poniżej, w tagu select w formularzu
 
     //i to samo robimy z kategoriamy zdarzeń
-    $categoriesQuery = $db->query('SELECT * FROM eventCategory ORDER BY id');
+    $categoriesQuery = $db->query('SELECT * FROM events_eventCategory ORDER BY id');
     $categories = $categoriesQuery->fetchAll();
 
     
@@ -221,7 +221,7 @@
 
         if ($everythingOK == true)
         {
-            $queryCheck = $db->prepare('UPDATE events SET name = :name, description = :description, category = :category, 
+            $queryCheck = $db->prepare('UPDATE events_events SET name = :name, description = :description, category = :category, 
                                         startDate = :startDate, endDate=:endDate, picture = :picture, www = :www, 
                                         province = :province, city = :city, address = :address WHERE id ='.$_GET['id']);
 
@@ -254,13 +254,13 @@
 
 	<title>About Events</title>
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
-<?php include "templates/header.php"; ?>
+<?php include "../../templates/header.php"; ?>
 	
     <div class="background">
         <section class="main_width">
@@ -384,7 +384,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="startDate">Data rozpoczęcia*</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="startDate"  name="startDate" value=<?php
+                    <input type="text" class="form-control date-picker" id="startDate"  name="startDate" value=<?php
                         if (isset($_POST['startDate']))
                         {
                             echo '"'.$_POST['startDate'].'"';
@@ -434,7 +434,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="endDate">Data zakończenia*</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="endDate"  name="endDate" value=<?php
+                    <input type="text" class="form-control date-picker" id="endDate"  name="endDate" value=<?php
                         if (isset($_POST['endDate']))
                         {
                             echo '"'.$_POST['endDate'].'"';
@@ -589,6 +589,9 @@
             <br/><br/>
         </section>
     </div>
-    <?php include "templates/footer.php"; ?>
+    <?php include "../../templates/footer.php"; ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src='../../js/script.js'></script>
 </body>
 </html>

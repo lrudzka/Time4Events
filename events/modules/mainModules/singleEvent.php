@@ -2,10 +2,10 @@
     session_start();
 
    
-    require_once 'database.php';
+     require_once '../configModules/database.php';
 
     //pobieramy eventy z bazy danych
-    $eventQuery = $db->query('SELECT * FROM events WHERE id='.$_GET['id']);
+    $eventQuery = $db->query('SELECT * FROM events_events WHERE id='.$_GET['id']);
     //odbieramy dane -> do tablicy dwuwymiarowej
     $event = $eventQuery->fetch(PDO::FETCH_ASSOC);
 
@@ -24,13 +24,13 @@
 
     <title>About Events</title>
     
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
-<?php include "templates/header.php"; ?>
+<?php include "../../templates/header.php"; ?>
     <div class="background">
         <section class="main_width">
             <section>
@@ -57,15 +57,15 @@
             <?php
                 if (isset($_SESSION['userLoggedIn']))
                 {
-                    echo '<h4> <a href="welcome.php">Panel użytkownika</a>';
+                    echo '<h4> <a href="../userModules/welcome.php">Panel użytkownika</a>';
                 }
             ?>
-            <h4><a href="index.php">Strona główna</a></h4>
+            <h4><a href="../../index.php">Strona główna</a></h4>
             <br/>
         </section>
     </div>
 
     
-    <?php include "templates/footer.php"; ?>
+    <?php include "../../templates/footer.php"; ?>
 </body>
 </html>
