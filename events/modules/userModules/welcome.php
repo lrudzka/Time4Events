@@ -14,7 +14,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>About Events</title>
+    <title>EVENTownia</title>
     
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/main.css">
@@ -36,6 +36,7 @@
             ?>
             <h3><a href="addEvent.php">Dodaj wydarzenie</a></h3>
             <h3><a href="userEvents.php">Zarządzaj wydarzeniami</a></h3>
+            <h3><a href="changeUserData.php">Zmiana danych</a></h3>
             <h3><a href="../../index.php">Strona główna</a></h3>
             <h3><a href="logout.php">Wyloguj się</a></h3>
             <br/>

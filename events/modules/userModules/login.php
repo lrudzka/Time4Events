@@ -44,7 +44,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>About Events</title>
+    <title>EVENTownia</title>
     
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/main.css">
@@ -90,6 +90,11 @@
                                 unset($_SESSION['badAttempt']);
                             }
                         ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <h3>Nie pamiętasz hasła? <a class="btn btn-default newPwd" href="passwordRecovery.php">Kliknij tutaj</a></h3>
                     </div>
                 </div>
             </form>

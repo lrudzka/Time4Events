@@ -7,7 +7,7 @@
 <body>
     <header>
         <div class="main_width">
-                About Events
+            EVENTownia
         </div>
     </header>
 </body>
