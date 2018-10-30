@@ -59,6 +59,8 @@ label {
 p.name {
     font-weight: 700;
     font-size: 20px;
+    height: 25px;
+    overflow: hidden;
 }
 div.events {
     background-color: black;

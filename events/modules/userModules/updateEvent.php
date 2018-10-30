@@ -277,7 +277,7 @@
                         }
                         else
                         {
-                            echo '"'.$event['name'].'"';
+                            echo '"'."{$event['name']}".'"';
                         }
                     ?>
                     >
@@ -304,7 +304,7 @@
                             }
                             else
                             {
-                                echo '<option value="'.$event['category'].'">'.$event['category'].'</option>';
+                                echo '<option value="'."{$event['category']}".'">'."{$event['category']}".'</option>';
                             }
                             
                             //pętla
