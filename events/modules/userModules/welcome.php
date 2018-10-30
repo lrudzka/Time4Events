@@ -36,7 +36,7 @@
             ?>
             <h3><a href="addEvent.php">Dodaj wydarzenie</a></h3>
             <h3><a href="userEvents.php">Zarządzaj wydarzeniami</a></h3>
-            <h3><a href="index.php">Strona główna</a></h3>
+            <h3><a href="../../index.php">Strona główna</a></h3>
             <h3><a href="logout.php">Wyloguj się</a></h3>
             <br/>
         </section>
