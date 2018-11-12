@@ -12,14 +12,14 @@ The application is to be used to manage events.
 
 ## Modules of the application
 
-###**_1. MAIN MODULES_**
+**_1. MAIN MODULES_**
 
-####* **Main Page** with: 
+* **Main Page** with: 
   - list of the closest events
   - list of the last added events
   - searching menu - directing the user to the list of events
 
-####* **List of events** with:
+* **List of events** with:
   - searching menu
   - filter information
   - list of events according to the filter used by the user, all the events with the option:
@@ -32,35 +32,35 @@ The application is to be used to manage events.
 
 ![List of events](http://s5.ifotos.pl/img/eventsjpg_qwhwaaw.jpg "list of events")
 
-####* **Single event**
+* **Single event**
   - opened by the _details_ button in the _List of events_ module, showing all the information about the event
 
-####* **Rules** 
+* **Rules** 
 
 
-###**_2. USER MODULES_**
+**_2. USER MODULES_**
 
-###_2.1. Available for the unlogged user_
+_2.1. Available for the unlogged user_
 
-####* **Register**
+* **Register**
 
-####* **Login** with:
+* **Login** with:
   - link to the _Register_ module
   - _password recovery_ option - opening the _Password recovery_ module
   - login function
 
-####* **Password recovery**
+* **Password recovery**
 opened by the _password recovery_ button in the _Login_ module, allowing the user to recover the password after entering the e-mail address registered to the application; the module starts the recovery password procedure - if the entered e-mail address exists in the database the password is being changed for the new string with the random numbers and letters, and new password is being sent to the entered e-mail address
 
-###_2.2. Available after login to the application_
+_2.2. Available after login to the application_
 
-####* **User Panel** with:
+* **User Panel** with:
   - menu to all user modules
   - information about the user events and about the user blocked events
 
-####* **Add event**
+* **Add event**
 
-####* **Manage your events** with
+* **Manage your events** with
   - searching menu
   - filter information
   - list of user's events according to the filter userd by the user - all the events with options:
@@ -68,17 +68,17 @@ opened by the _password recovery_ button in the _Login_ module, allowing the use
     - _update_ - opening the _Update Event_ module for the selected event
     - _delete_ - opening the _Single Event_ module for the selected event with the _delete_ option at the top of the page
 
-####* **Update event**
+* **Update event**
 opened by the _update_ button in the _Manage your events_ module, allowing to make changes to the selected event
 
-####* **User's data change** with:
+* **User's data change** with:
   - changing e-mail address
   - changing password
 
 
-###**_3. ADMIN MODULES_** - available to all the users with the admin option
+**_3. ADMIN MODULES_** - available to all the users with the admin option
 
-####* **List of users** with:
+* **List of users** with:
   - quick search input - by the user's login
   - filter restricing the list of users, according to the following options:
     - all the users
@@ -93,7 +93,7 @@ opened by the _update_ button in the _Manage your events_ module, allowing to ma
     - admin privilege button - for the users with the admin option: _delete admin privilege_; for the users without the admin option and without blocked events: _add admin privilege_
     - block / delele the user button - for the user with some blocked events: _block the user_, for the user with 0 events: _delete the user_
 
-####* **List of categories** with:
+* **List of categories** with:
   - list of categories with the following information:
     - name of the category
     - order id
@@ -102,17 +102,17 @@ opened by the _update_ button in the _Manage your events_ module, allowing to ma
   - add new category option
   - change category's order id option
 
-####* **List of blocked events**
+* **List of blocked events**
   - searching menu
     - filter information
     - list of blocked events according to the filter used by the user, all the events with the option:
       - _details_ - opening the _Single Event_ module for the selected event
 
-####* **Single event with admin options**
+* **Single event with admin options**
   - opened by the _details_ button in the _List of events_ module or in the _List of blocked events_ module, showing all the information about the event with blocking/unbloking option
 
 
-###**_NAVIGATING THE APPLICATON_**
+**_NAVIGATING THE APPLICATON_**
 
 The user can easily navigate the applicaton - all the modules have in the bottom links to the _main page_, to the _user panel_, and to the _admin panel_ - for the users with admin option. There is also menu in the header: with main links - to the main modules, and with user links - to the user's module.
 
