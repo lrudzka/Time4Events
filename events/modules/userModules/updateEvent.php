@@ -1,5 +1,7 @@
 <?php
     session_start();
+    
+    $_SESSION['level']='1.3';
 
     if (!isset($_SESSION['userLoggedIn']))
     {

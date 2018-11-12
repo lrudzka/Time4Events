@@ -1,6 +1,8 @@
 <?php
     session_start();
     
+    $_SESSION['level']='1.3';
+    
     if (!isset($_SESSION['userLoggedIn']))
     {
         header ('Location: login.php');
@@ -118,6 +120,7 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     
 </head>
 
@@ -229,7 +232,16 @@
             </div>
             <br/>
             <br/>
-            <h3><a href="welcome.php">Panel użytkownika</a></h3>
+            <div class="bottomMenu">
+                <a class="inRow" href="welcome.php">Panel użytkownika</a>
+                <?php
+                    if (isset($_SESSION['admin']))
+                    {
+                        echo '<a class="inRow" href="../adminModules/adminPanel.php">Panel administratora</a>';
+                    }
+                ?>
+                <a href="../../index.php">Strona główna</a>
+            </div>
             <br/>
         </section>
     </div>

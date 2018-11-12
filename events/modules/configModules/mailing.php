@@ -31,8 +31,12 @@
 
         //Recipients
         $mail->setFrom('noreply@mycoding.eu', 'EVENTownia');
-        $mail->addAddress($recipient, $recipient);     // Add a recipient
-            
+        //  $mail->addAddress($recipient, $recipient);     // Add a recipient
+        
+        for ($i=0; $i<count($recipient); $i++)
+        {
+            $mail->addAddress($recipient[$i]);
+        }    
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = $subject;

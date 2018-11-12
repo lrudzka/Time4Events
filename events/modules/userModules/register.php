@@ -1,5 +1,7 @@
 <?php
     session_start();
+    
+    $_SESSION['level']='1.3';
 
     if(isset($_POST['login']))
     {
@@ -102,7 +104,7 @@
             //insert z użyciem PDO
                 //wykorzystujemy stworzony przez nas obiekt - db (w pliku database.php)
                 //krok pierwszy - definiujemy zapytanie
-                $query = $db->prepare('INSERT INTO events_users VALUES (:login, :password, :email)');
+                $query = $db->prepare('INSERT INTO events_users (login, password, email, admin, bann) VALUES (:login, :password, :email, null, null)');
                 //krok drugi - przypisujemy wartość do zmiennych
                 $query->bindValue(':login', $login, PDO::PARAM_STR);
                 $query->bindValue(':password', $pwd_hash, PDO::PARAM_STR);

@@ -1,9 +1,12 @@
 <?php
     session_start();
+    
+    $_SESSION['level']='1.3';
 
     if (isset($_SESSION['userLoggedIn']))
     {
         header("Location: welcome.php");
+        exit;
     }
 
      require_once '../configModules/database.php';
@@ -14,7 +17,7 @@
         $login = filter_input(INPUT_POST, 'login');
         $password = filter_input(INPUT_POST, 'password');
 
-        $userQuery = $db->prepare('SELECT login, password FROM events_users WHERE login=:login');
+        $userQuery = $db->prepare('SELECT login, password, admin, bann FROM events_users WHERE login=:login');
         $userQuery -> bindValue(':login', $login, PDO::PARAM_STR);
         $userQuery-> execute();
 
@@ -24,9 +27,27 @@
         //jeżeli tablica nie jest pusta... - mamy 1 rekord i hasło się zgadza
         if ($user && password_verify($password, $user['password']))
         {
-            $_SESSION['userLoggedIn'] = $user['login'];
-            unset($_SESSION['badAttempt']);
-            header('Location: welcome.php');
+            // sprawdzamy, czy użytkownik nie jest zablokowany
+            if ($user['bann']==1)
+            {
+                $_SESSION['bannInfo'] = "Twoje konto w serwisie zostało zablokowane";
+            }
+            else
+            {
+               // sprawdzamy, czy użytkownik ma uprawnienia administratora
+            
+                if ($user['admin'])
+                {
+                    $_SESSION['admin']=true;
+                }
+                
+                
+                // logujemy użytkownika i kierujemy do panelu
+                $_SESSION['userLoggedIn'] = $user['login'];
+                unset($_SESSION['badAttempt']);
+                header('Location: welcome.php'); 
+            }
+            
         }
         else
         {
@@ -88,6 +109,11 @@
                             {
                                 echo '<span class="error">Zły login lub hasło</span>';
                                 unset($_SESSION['badAttempt']);
+                            }
+                            if (isset($_SESSION['bannInfo']))
+                            {
+                                echo '<span class="error">'.$_SESSION['bannInfo'].'</span>';
+                                unset($_SESSION['bannInfo']);
                             }
                         ?>
                     </div>

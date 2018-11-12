@@ -1,6 +1,8 @@
 <?php
     session_start();
     
+    $_SESSION['level']='1.3';
+    
      if (isset($_SESSION['userLoggedIn']))
     {
         header ('Location: userPanel.php');
@@ -66,9 +68,15 @@
              
             require_once '../configModules/mailing.php';
             
-            $passwordInfo = "Twoje tymczasowe hasło do naszego serwisu to <b>$newPwd</b>, użyj go do zalogowania się do serwisu i następnie zmień hasło na nowe.";
+            $mailRecipient = array();
+            array_push($mailRecipient, $email);
             
-            sendEmail($email, $passwordInfo, "Zmiana hasła");
+            $passwordInfo = '<div style="font-size: 20px;">Twoje tymczasowe hasło do naszego serwisu to:</div><br/>
+                             <div style="font-size: 20px;"><b>'.$newPwd.'</b></div><br>
+                             <div style="font-size: 20px;">Użyj tego hasła do zalogowania się do serwisu i następnie zmień hasło na nowe</div><br>
+                             <div style="font-size: 20px;"><a href="http://events.mycoding.eu/">EVENTownia</a></div>';
+            
+            sendEmail($mailRecipient, $passwordInfo, "Zmiana hasła");
             
             $_SESSION['emailInfo'] = "E-mail z nowym hasłem został wysłany";
             unset($_POST['email']);

@@ -1,9 +1,12 @@
 <?php
     session_start();
+    
+    $_SESSION['level']='1.3';
 
     if (!isset($_SESSION['userLoggedIn']))
     {
         header ('Location: login.php');
+        exit;
     }
 
     require_once '../configModules/database.php';
@@ -546,14 +549,23 @@
                     </div>
                 </div>
             </form>
-            <h4><a href="welcome.php">Panel użytkownika</a></h4>
+            <div class="bottomMenu">
+                <a class="inRow" href="welcome.php">Panel użytkownika</a>
+                <?php
+                    if (isset($_SESSION['admin']))
+                    {
+                        echo '<a class="inRow" href="../adminModules/adminPanel.php">Panel administratora</a>';
+                    }
+                ?>
+                <a href="../../index.php">Strona główna</a>
+            </div>
             <br/><br/>
         </section>
     </div>
     <?php include "../../templates/footer.php"; ?>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='../../js/script.js'></script>
 </body>
 </html>
