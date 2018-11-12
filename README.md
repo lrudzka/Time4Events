@@ -21,11 +21,11 @@ The application is to be used to manage events.
   - filter information
   - list of events according to the filter used by the user, all the events with the option:
     - _details_ - opening the _Single Event_ module for the selected event
-    - _report_ - reporting abuse about the selected event by sending email to all the users with admin option, with all the necessary information: the user reporting (the user must be logged to the application), the name of the event, the link to the event
+    - _report_ - reporting abuse about the selected event by sending email to all the users with admin option, with all the necessary information: the user reporting    (the user must be logged to the application), the name of the event, the link to the event
 
-List of events can be watched in two option:
-- actual and incoming events
-- archive events
+    List of events can be watched in two option:
+    - actual and incoming events
+    - archive events
 
 * **Single event**
   - opened by the _details_ button in the _List of events_ module, showing all the information about the event
@@ -35,7 +35,7 @@ List of events can be watched in two option:
 
 2. **_USER MODULES_**
 
-2.1. _Available for the unlogged user_:
+   2.1. _Available for the unlogged user_:
 
 * **Register**
 
@@ -47,7 +47,7 @@ List of events can be watched in two option:
 * **Password recovery**
 opened by the _password recovery_ button in the _Login_ module, allowing the user to recover the password after entering the e-mail address registered to the application; the module starts the recovery password procedure - if the entered e-mail address exists in the database the password is being changed for the new string with the random numbers and letters, and new password is being sent to the entered e-mail address
 
-2.2. _Available after login to the application_:
+   2.2. _Available after login to the application_:
 
 * **User Panel** with:
   - menu to all user modules
@@ -71,7 +71,7 @@ opened by the _update_ button in the _Manage your events_ module, allowing to ma
   - changing password
 
 
-3. **_ADMIN MODULES_** - available to all the user's with the admin option
+3. **_ADMIN MODULES_** - available to all the users with the admin option
 
 * **List of users** with:
   - quick search input - by the user's login
