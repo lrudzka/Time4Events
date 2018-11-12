@@ -136,14 +136,14 @@ The application uses PHPMailer for sending e-mail - for the recovery password pr
 
 Page is fully responsive, there should be no troubles in accessing it on any device. 
 
-![mobile version](http://s5.ifotos.pl/img/01png_qwhwqxs.png "mobile version")
+![mobile version](http://s5.ifotos.pl/img/mobile01j_qwhwqsp.jpg "mobile version")
 
-![mobile version](http://s2.ifotos.pl/img/02png_qwhwqxq.png "mobile version")
+![mobile version](http://s5.ifotos.pl/img/mobile02j_qwhwqsh.jpg "mobile version")
 
 
-![mobile version](http://s6.ifotos.pl/img/03png_qwhwqnp.png "mobile version")
+![mobile version](http://s2.ifotos.pl/img/mobile03j_qwhwqsr.jpg "mobile version")
 
-![mobile version](http://s2.ifotos.pl/img/04png_qwhwqnh.png "mobile version")
+![mobile version](http://s6.ifotos.pl/img/mobile04j_qwhwqsx.jpg "mobile version")
 
 ## Installation
 
