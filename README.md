@@ -9,7 +9,7 @@ The application is to be used to manage events.
 
 ### Modules of the application
 
-1. **_MAIN MODULES_**
+**_1. MAIN MODULES_**
 
 * **Main Page** with: 
   - list of the closest events
@@ -33,9 +33,9 @@ The application is to be used to manage events.
 * **Rules** 
 
 
-2. **_USER MODULES_**
+**_2. USER MODULES_**
 
-   2.1. _Available for the unlogged user_:
+   _2.1. Available for the unlogged user_:
 
 * **Register**
 
@@ -47,7 +47,7 @@ The application is to be used to manage events.
 * **Password recovery**
 opened by the _password recovery_ button in the _Login_ module, allowing the user to recover the password after entering the e-mail address registered to the application; the module starts the recovery password procedure - if the entered e-mail address exists in the database the password is being changed for the new string with the random numbers and letters, and new password is being sent to the entered e-mail address
 
-   2.2. _Available after login to the application_:
+   _2.2. Available after login to the application_:
 
 * **User Panel** with:
   - menu to all user modules
